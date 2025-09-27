@@ -1,6 +1,5 @@
 # 🚀 DE Fast Course: Data Engineering Essentials
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.9+](https://img.shields.io/badge/Python-3.9%2B-blue.svg)](https://www.python.org/downloads/)
 [![Airflow](https://img.shields.io/badge/Apache%20Airflow-2.7%2B-orange.svg)](https://airflow.apache.org/)
 [![Jupyter](https://img.shields.io/badge/Jupyter%20Notebook-green.svg)](https://jupyter.org/)
@@ -8,7 +7,7 @@
 
 ## 📖 Welcome to DE Fast Course! 🎓
 
-This repository is your **one-stop guide** to **Data Engineering fundamentals**, created by **Mark Tsyrul** as a graduation project. Whether you're a beginner exploring ETL pipelines or an intermediate learner building workflows, this course covers essential tools like **Apache Airflow**, **Jupyter Notebook**, and **PostgreSQL** through hands-on examples and mini-courses.
+This repository is your **one-stop guide** to **Data Engineering fundamentals**, created by **Mark Tsyrul**. Whether you're a beginner exploring ETL pipelines or an intermediate learner building workflows, this course covers essential tools like **Apache Airflow**, **Jupyter Notebook**, and **PostgreSQL** through hands-on examples and mini-courses.
 
 Perfect for **CS students** aiming to build a portfolio for university applications or entry-level roles. Dive in and start engineering data like a pro! 💻
 
@@ -42,7 +41,7 @@ Learn to build and orchestrate data pipelines using **Apache Airflow DAGs**. Fro
 - **Key Topics**: BashOperator, PostgresOperator, Custom Sensors, Variables.
 - **Examples**: Exchange rate fetching, data marts, conditional workflows.
 
-**[Full Course Guide](https://github.com/TsMark01/DeSql/blob/main/AIRFLOW_DAGS_COURSE.markdown)**
+**[Full Course Guide](https://github.com/TsMark01/DE_FAST_COURSE/blob/main/AIRFLOW_DAGS_COURSE.markdown)**
 
 ### 2. Jupyter Notebook Mini Course 📝
 **Level**: Beginner | **Duration**: 1-2 hours
@@ -52,7 +51,7 @@ Master interactive data analysis with **Jupyter Notebook**. Prototype ETL steps,
 - **Key Topics**: Pandas cleaning, API integration, SQL queries, Matplotlib plots.
 - **Examples**: Data cleaning, exchange rate trends, automated pipelines.
 
-**[Full Course Guide](https://github.com/TsMark01/DeSql/blob/main/jupyter_notebook_course.markdown)**
+**[Full Course Guide](https://github.com/TsMark01/DE_FAST_COURSE/blob/main/JUPYTER_NOTEBOOK_COURSE.markdown)**
 
 ### 3. ETL Pipeline Project 🛠️
 **Level**: Intermediate | **Duration**: 4-6 hours
@@ -94,9 +93,9 @@ Build a complete **ETL pipeline** fetching from a medical API, processing with A
    Open `http://localhost:8888` and explore the notebooks.
 
 4. **Start Airflow** (if needed):
-   Follow the [Airflow Installation Guide](https://github.com/TsMark01/DeSql/blob/main/airflow_installing.markdown).
+   Follow the [Airflow Installation Guide]().
 
-**Pro Tip**: Use the [Jupyter Setup Guide](https://github.com/TsMark01/DeSql/blob/main/JUPYTERNOTEBOOK_INSTALLING.markdown) for daemon mode.
+**Pro Tip**: Use the [Jupyter Setup Guide](https://github.com/TsMark01/DE_FAST_COURSE/blob/main/JUPYTERNOTEBOOK_INSTALLING.markdown) for daemon mode.
 
 ---
 
@@ -163,9 +162,9 @@ DE_FAST_COURSE/
 Explore my other data engineering work:
 
 - **[DE API Airflow + Power BI](https://github.com/TsMark01/DE_api_airflow_project_pbi)**: Full ETL pipeline with medical API integration. 🏥
-- **[DeSql Repo](https://github.com/TsMark01/DeSql)**: Advanced guides on Airflow and Jupyter setups. 📚
+- **[DE_FAST_COURSE Repo](https://github.com/TsMark01/DE_FAST_COURSE)**: Advanced guides on Airflow and Jupyter setups. 📚
 - **[Travel Bot](https://github.com/TsMark01/travel_bot)**: Telegram bot with API and database features. 🌍
-- **[Scriptwriter Bot](https://github.com/TsMark01/bot_scenarist)**: AI-powered story generator with Yandex GPT. 🎬
+- **[Scriptwriter Bot](https://github.com/TsMark01/Bot_Scriptwriter)**: AI-powered story generator with Yandex GPT. 🎬
 
 ---
 
@@ -182,6 +181,6 @@ Explore my other data engineering work:
 ## 📝 Author
 
 **Mark Tsyrul**  
-17-year-old CS enthusiast from Russia | GitHub: [TsMark01](https://github.com/TsMark01) | Building the future of data engineering, one DAG at a time! 🚀
+17-year-old enthusiast from Russia | GitHub: [TsMark01](https://github.com/TsMark01) | Building the future of data engineering and IT! 🚀
 
 *Last Updated: September 27, 2025*
