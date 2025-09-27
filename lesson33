@@ -1,7 +1,0 @@
-import psycopg2 as pg
-import pandas.io.sql as psql
-connection = pg.connect("host=localhost dbname=yourdb user=youruser password=yourpassword")
-df_products = psql.read_sql('SELECT * FROM products2', connection)
-df_total_money = psql.read_sql('SELECT * FROM total_money', connection)
-df_with_join = df_products.merge(df_total_money, how = 'left', left_on = 'code', right_on = 'product_code')
-print(df_with_join)
