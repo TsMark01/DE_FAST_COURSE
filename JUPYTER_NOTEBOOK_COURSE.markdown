@@ -117,7 +117,7 @@ if response.status_code != 200:
 data = response.json()
 usd_rub = data["Valute"]["USD"]["Value"]
 
-# Create DataFrame
+# Create DataFrame 
 df = pd.DataFrame({
     'currency': ['USD/RUB'],
     'rate': [usd_rub],
@@ -299,7 +299,7 @@ plt.show()
 
 
 ## 🔮 Further Learning
-
+ 
 - Add error handling and logging to notebooks.
 - Integrate with Airflow for scheduled execution.
 - Use Power BI to visualize notebook outputs.
