@@ -4,7 +4,7 @@
 
 Welcome to this mini course on **Apache Airflow DAGs** (Directed Acyclic Graphs), designed to teach you how to orchestrate data pipelines using Airflow. This course is perfect for beginners in data engineering who want to learn how to automate workflows, integrate APIs, manage databases, and create custom operators. Through five practical examples, you’ll build hands-on skills in creating robust ETL (Extract, Transform, Load) pipelines. This course is a portfolio piece by Mark Tsyrul, showcasing data engineering skills for academic and professional growth.
 
-### 🎯 Learning Objectives
+### 🎯 Learning Objectives 
 By the end of this course, you will:
 - Understand the structure and purpose of Airflow DAGs.
 - Use `BashOperator` and `PostgresOperator` to execute tasks.
