@@ -41,7 +41,7 @@ This course includes five practical DAG examples:
 - **Dependencies**: `psycopg2-binary`, `requests`, `sqlalchemy`.
 - **Airflow Connection**: `postgres_connection_main` (host, schema, login, password, port: 5432).
 
-For installation, refer to the comprehensive guide at [airflow_installing.markdown](https://github.com/TsMark01/DeSql/blob/main/airflow_installing.markdown).
+For installation, refer to the comprehensive guide at [airflow_installing.markdown](https://github.com/TsMark01/DeSql/blob/main/AIRFLOW_INSTALLING.markdown).
 
 Install dependencies:
 ```bash
