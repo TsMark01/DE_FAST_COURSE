@@ -31,7 +31,7 @@ By the end of this course, you will:
 - **Dependencies**: `psycopg2-binary`, `requests`, `sqlalchemy`.
 - **Airflow Connection**: `postgres_connection_main` (host, schema, login, password, port: 5432).
 
-For setup, refer to the guide at [AIRFLOW INSTALLING](https://github.com/TsMark01/DeSql/blob/main/AIRFLOW_INSTALLING.markdown).
+For setup, refer to the guide at [AIRFLOW INSTALLING](https://github.com/TsMark01/DE_FAST_COURSE/blob/main/AIRFLOW_INSTALLING.markdown).
 
 Install dependencies:
 ```bash
@@ -513,7 +513,7 @@ class ExampleOperator(BaseOperator):
 ## 🧪 Testing and Running
 
 1. **Setup**:
-   - Follow [AIRFLOW INSTALLING](https://github.com/TsMark01/DeSql/blob/main/AIRFLOW_INSTALLING.markdown).
+   - Follow [AIRFLOW INSTALLING](https://github.com/TsMark01/DE_FAST_COURSE/blob/main/AIRFLOW_INSTALLING.markdown).
    - Place DAGs, scripts, and plugins in respective directories.
 
 2. **Test DAGs**:
