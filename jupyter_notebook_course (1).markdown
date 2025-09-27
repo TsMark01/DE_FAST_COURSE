@@ -32,7 +32,7 @@ By the end of this course, you will:
 - **Dependencies**: `notebook`, `pandas`, `requests`, `sqlalchemy`, `psycopg2-binary`, `matplotlib`.
 - **Working Directory**: `/jupyter_notebook_files/` for `.ipynb` files.
 
-For setup, refer to the guide at [JUPYTERNOTEBOOK_INSTALLING.markdown](https://github.com/TsMark01/DeSql/blob/main/JUPYTERNOTEBOOK_INSTALLING.markdown).
+For setup, refer to the guide at [JUPYTERNOTEBOOK_INSTALLING.markdown](https://github.com/TsMark01/DE_FAST_COURSE/blob/main/JUPYTERNOTEBOOK_INSTALLING.markdown).
 
 Install dependencies:
 ```bash
@@ -283,7 +283,7 @@ plt.show()
 ## 🧪 Testing and Running
 
 1. **Setup**:
-   - Follow [JUPYTERNOTEBOOK_INSTALLING.markdown](https://github.com/TsMark01/DeSql/blob/main/JUPYTERNOTEBOOK_INSTALLING.markdown).
+   - Follow [JUPYTERNOTEBOOK_INSTALLING.markdown](https://github.com/TsMark01/DE_FAST_COURSE/blob/main/JUPYTERNOTEBOOK_INSTALLING.markdown).
    - Save `.ipynb` files in `/jupyter_notebook_files/`.
 
 2. **Run Jupyter**:
@@ -297,11 +297,6 @@ plt.show()
    - Verify CSV files, database entries, and PNG outputs in `/jupyter_notebook_files/`.
    - Check Jupyter logs for errors.
 
-## 📝 Portfolio Tips
-
-- **For UCAS**: Highlight this course in your personal statement: “I developed a Jupyter Notebook mini course (jupyter_notebook_course.markdown) for my graduation project, showcasing my ability to teach data engineering concepts like API integration, database queries, and visualization, essential for computer science.”
-- **For IELTS**: Use examples for Speaking Part 2 (e.g., “Describe a project you completed” – discuss the automated pipeline) or Writing Task 1 (e.g., describe the visualization process). Practice terms like “data pipeline,” “interactive computing,” and “visualization” for your 6.0–6.5 target by November 2025.
-- **GitHub**: Add this to your `DeSql` repo alongside your Power BI project ([DE_api_airflow_project_pbi](https://github.com/TsMark01/DE_api_airflow_project_pbi)) and Airflow course to demonstrate a complete data engineering skillset.
 
 ## 🔮 Further Learning
 
@@ -310,6 +305,6 @@ plt.show()
 - Use Power BI to visualize notebook outputs.
 - Explore `seaborn` for advanced visualizations.
 
-**Related Course**: Check out the complementary Apache Airflow mini course at [AIRFLOW_DAGS_COURSE.markdown](https://github.com/TsMark01/DeSql/blob/main/AIRFLOW_DAGS_COURSE.markdown) for workflow orchestration skills.
+**Related Course**: Check out the complementary Apache Airflow mini course at [AIRFLOW_DAGS_COURSE.markdown](https://github.com/TsMark01/DE_FAST_COURSE/blob/main/AIRFLOW_DAGS_COURSE.markdown) for workflow orchestration skills.
 
 **Author**: Mark Tsyrul
