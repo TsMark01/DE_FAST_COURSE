@@ -2,7 +2,7 @@
 
 ## 📋 Overview 
 
-This guide provides step-by-step instructions for installing and configuring **Jupyter Notebook**, a web-based interactive computing environment ideal for data analysis, visualization, and prototyping. It covers setup on Linux (with notes for macOS and Windows via WSL), configuration for remote access, and running Jupyter as a background service using systemd. This setup is perfect for showcasing data science and scripting skills in a professional portfolio.
+This guide provides step-by-step instructions for installing and configuring **Jupyter Notebook**, a web-based interactive computing environment ideal for data analysis, visualization, and prototyping. It covers setup on Linux (with notes for macOS and Windows via WSL), configuration for remote access, and running Jupyter as a background service using systemd. This setup is perfect for showcasing data science and scripting skills in a professional portfolio. 
 
 ### 🎯 Key Objectives
 - Install Jupyter Notebook and dependencies.
