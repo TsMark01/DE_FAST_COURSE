@@ -513,7 +513,7 @@ class ExampleOperator(BaseOperator):
 ## 🧪 Testing and Running
 
 1. **Setup**:
-   - Follow [airflow_installing.markdown](https://github.com/TsMark01/DeSql/blob/main/airflow_installing.markdown).
+   - Follow [AIRFLOW INSTALLING](https://github.com/TsMark01/DeSql/blob/main/AIRFLOW_INSTALLING.markdown).
    - Place DAGs, scripts, and plugins in respective directories.
 
 2. **Test DAGs**:
