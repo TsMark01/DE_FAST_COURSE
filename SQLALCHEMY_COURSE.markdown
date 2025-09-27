@@ -2,7 +2,7 @@
 
 ## 📚 Introduction
 
-This concise mini course, created by **Mark Tsyrul** for a graduation project, introduces **SQLAlchemy**, a Python ORM for efficient database management in data engineering. Through three Jupyter Notebook examples, you’ll learn to set up databases, perform CRUD operations, and execute joins. This course is ideal for beginners and complements Airflow and Jupyter workflows in your CS portfolio.
+This concise mini course, created by **Mark Tsyrul**, introduces **SQLAlchemy**, a Python ORM for efficient database management in data engineering. Through three Jupyter Notebook examples, you’ll learn to set up databases, perform CRUD operations, and execute joins. This course is ideal for beginners and complements Airflow and Jupyter workflows in your CS portfolio.
 
 ### 🎯 Learning Objectives
 - Configure SQLAlchemy with PostgreSQL.
