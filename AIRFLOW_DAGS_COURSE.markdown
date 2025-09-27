@@ -441,17 +441,11 @@ class ExampleOperator(BaseOperator):
    - Check PostgreSQL tables (`usdtorub2`, `products2`, `op_table`) for data.
    - Monitor logs in `/airflow/logs`.
 
-## 📝 Portfolio Tips
-
-- **For UCAS**: Highlight this course in your personal statement: “I developed a comprehensive mini course on Apache Airflow DAGs (airflow_dags_course.markdown), demonstrating my ability to design, implement, and document ETL pipelines, a core skill in data engineering.”
-- **For IELTS**: Use examples for Speaking Part 2 (e.g., “Describe a technical project” – discuss the exchange rate or data mart DAG) or Writing Task 2 (e.g., “Explain the importance of automation in data processing”). Practice terms like “DAG orchestration,” “custom sensor,” and “ETL pipeline.”
-- **GitHub**: Add this to your `DeSql` repo alongside `airflow_installing.markdown` to showcase both setup and usage skills. Consider adding a Jupyter Notebook (`.ipynb`) with data analysis to complement this course.
-
 ## 🔮 Further Learning
 
 - Add retry logic and error handling to DAGs.
 - Explore CeleryExecutor for distributed task execution.
-- Integrate with visualization tools like Power BI.
+- Integrate with visualization tools like Power BI. [EXAMPLE PROJECT](https://github.com/TsMark01/DE_api_airflow_project_pbi)
 - Expand sensor functionality for more complex conditions.
 
 **Author**: Mark Tsyrul
