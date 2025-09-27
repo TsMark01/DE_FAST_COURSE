@@ -25,7 +25,7 @@ This concise mini course, created by **Mark Tsyrul**, introduces **SQLAlchemy**,
 - **PostgreSQL**: 12+ with a database (e.g., `data_engineering`).
 - **Dependencies**: `sqlalchemy`, `psycopg2-binary`, `pandas`, `notebook`.
 
-For Jupyter setup, see [JUPYTERNOTEBOOK_INSTALLING.markdown](https://github.com/TsMark01/DeSql/blob/main/JUPYTERNOTEBOOK_INSTALLING.markdown). For PostgreSQL setup, see [postgres_installing.markdown](https://github.com/TsMark01/DeSql/blob/main/postgres_installing.markdown).
+For Jupyter setup, see [JUPYTERNOTEBOOK_INSTALLING.markdown](https://github.com/TsMark01/DE_FAST_COURSE/blob/main/JUPYTERNOTEBOOK_INSTALLING.markdown). For PostgreSQL setup, see [Postgress Installing](https://github.com/TsMark01/DE_FAST_COURSE/blob/main/POSTGRESS_INSTALLING.markdown).
 
 Install dependencies:
 ```bash
@@ -187,8 +187,8 @@ print("Exchange Rates:", df)
 
 ## 🧪 Testing and Running
 1. **Setup**:
-   - Follow [postgres_installing.markdown](https://github.com/TsMark01/DeSql/blob/main/postgres_installing.markdown) for PostgreSQL.
-   - Follow [JUPYTERNOTEBOOK_INSTALLING.markdown](https://github.com/TsMark01/DeSql/blob/main/JUPYTERNOTEBOOK_INSTALLING.markdown) for Jupyter.
+   - Follow [postgres_installing.markdown](https://github.com/TsMark01/DE_FAST_COURSE/blob/main/POSTGRESS_INSTALLING.markdown) for PostgreSQL.
+   - Follow [JUPYTERNOTEBOOK_INSTALLING.markdown](https://github.com/TsMark01/DE_FAST_COURSE/blob/main/JUPYTER_NOTEBOOK_INSTALLING.markdown) for Jupyter.
 2. **Run Jupyter**:
    ```bash
    jupyter notebook
