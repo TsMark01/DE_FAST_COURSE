@@ -1,19 +1,19 @@
-# Apache Airflow DAGs: A Mini Course with Practical Examples
+# Apache Airflow DAGs: A Mini Course for Beginners
 
-## 📋 Overview
+## 📚 Introduction
 
-This mini course introduces **Apache Airflow DAGs** (Directed Acyclic Graphs) for orchestrating data pipelines. It covers creating and configuring DAGs using operators like `BashOperator`, `PostgresOperator`, and custom sensors, integrating with external APIs, and managing PostgreSQL databases. The examples demonstrate real-world use cases, such as fetching exchange rates, processing product data, and implementing conditional task execution with sensors. This course is designed for beginners in data engineering and enhances your CS portfolio for university applications.
+Welcome to this mini course on **Apache Airflow DAGs** (Directed Acyclic Graphs), designed to teach you how to orchestrate data pipelines using Airflow. This course is perfect for beginners in data engineering who want to learn how to automate workflows, integrate APIs, manage databases, and create custom operators. Through five practical examples, you’ll build hands-on skills in creating robust ETL (Extract, Transform, Load) pipelines. This course is a portfolio piece by Mark Tsyrul, showcasing data engineering skills for academic and professional growth.
 
-### 🎯 Objectives
-- Understand DAG structure and configuration.
-- Implement `BashOperator` for script execution.
-- Use `PostgresOperator` for database operations.
+### 🎯 Learning Objectives
+By the end of this course, you will:
+- Understand the structure and purpose of Airflow DAGs.
+- Use `BashOperator` and `PostgresOperator` to execute tasks.
 - Create and apply custom sensors for conditional workflows.
-- Integrate APIs and databases for ETL pipelines.
-- Provide practical, portfolio-ready examples.
+- Integrate external APIs and PostgreSQL databases.
+- Build dynamic pipelines using Airflow Variables.
+- Develop portfolio-ready projects to demonstrate data engineering skills.
 
-## 🛠️ Tech Stack
-
+### 🛠️ Tech Stack
 | Category          | Tools/Technologies       | Purpose |
 |-------------------|--------------------------|---------|
 | **Orchestration** | Apache Airflow          | Workflow management |
@@ -24,37 +24,33 @@ This mini course introduces **Apache Airflow DAGs** (Directed Acyclic Graphs) fo
 | **ORM**           | SQLAlchemy              | Database interaction |
 | **Scripting**     | Python 3.9+             | Task logic |
 
-## 🏗️ Course Structure
-
-This course includes five practical DAG examples:
-1. **Basic DAG with BashOperator**: Executes sequential Python scripts.
-2. **Exchange Rate DAG with Arguments**: Fetches USD/RUB rates and stores them in PostgreSQL.
-3. **Sensor-Based DAG**: Uses a custom sensor to check table data.
-4. **Data Mart DAG**: Manages product data with SQL operations.
-5. **Variable-Driven DAG**: Uses Airflow Variables for dynamic task execution.
-
-## 🚀 Setup Requirements
-
+### 📋 Prerequisites
 - **Airflow**: Version 2.7.3+ with `[postgresql]` extra.
 - **Python**: 3.9+.
 - **PostgreSQL**: Configured with a database (e.g., `airflow_metadata`).
 - **Dependencies**: `psycopg2-binary`, `requests`, `sqlalchemy`.
 - **Airflow Connection**: `postgres_connection_main` (host, schema, login, password, port: 5432).
 
-For installation, refer to the comprehensive guide at [airflow_installing.markdown](https://github.com/TsMark01/DeSql/blob/main/AIRFLOW_INSTALLING.markdown).
+For setup, refer to the guide at [AIRFLOW INSTALLING](https://github.com/TsMark01/DeSql/blob/main/AIRFLOW_INSTALLING.markdown).
 
 Install dependencies:
 ```bash
 pip install apache-airflow[postgresql]==2.7.3 psycopg2-binary requests sqlalchemy
 ```
 
-Place scripts in `/airflow/scripts/`, DAGs in `/airflow/dags/`, and plugins in `/airflow/plugins/`.
+## 🏗️ Course Outline
 
-## 📚 DAG Examples
+This course consists of five modules, each with a practical DAG example, code, explanations, and exercises to reinforce learning. Place DAGs in `/airflow/dags/`, scripts in `/airflow/scripts/`, and plugins in `/airflow/plugins/`.
 
-### 1. Basic DAG with BashOperator
-This DAG runs two Python scripts sequentially, demonstrating simple task orchestration.
+### Module 1: Basic DAG with BashOperator
+**Objective**: Learn to create a simple DAG that executes Python scripts sequentially.
 
+**What You’ll Learn**:
+- Define a DAG with `BashOperator`.
+- Set up task dependencies.
+- Understand scheduling and execution.
+
+**Example DAG** (`basic_dag.py`):
 ```python
 from datetime import datetime
 from airflow.models import DAG
@@ -82,13 +78,24 @@ task2 = BashOperator(
 task1 >> task2
 ```
 
-**Key Points**:
-- `schedule_interval='* * * * *'`: Runs every minute.
-- `BashOperator`: Executes scripts in `/airflow/scripts/dag1/`.
-- `task1 >> task2`: Defines task dependency.
+**Explanation**:
+- **DAG Definition**: The DAG runs every minute (`schedule_interval='* * * * *'`).
+- **Tasks**: `task1` and `task2` execute Python scripts in `/airflow/scripts/dag1/`.
+- **Dependency**: `task1 >> task2` ensures `task2` runs after `task1`.
 
-### 2. Exchange Rate DAG with Arguments
-This DAG fetches the USD/RUB exchange rate from an API, stores it in PostgreSQL, and passes database connection details via command-line arguments.
+**Exercise**:
+1. Create a dummy `task1.py` and `task2.py` in `/airflow/scripts/dag1/` (e.g., `print("Task 1")` and `print("Task 2")`).
+2. Place the DAG in `/airflow/dags/` and trigger it via the Airflow UI (`http://localhost:8080`).
+3. Check logs in `/airflow/logs` to verify execution order.
+4. **Question**: How would you modify the schedule to run every hour?
+
+### Module 2: Exchange Rate DAG with Arguments
+**Objective**: Build a DAG that fetches USD/RUB exchange rates and stores them in PostgreSQL, using command-line arguments for flexibility.
+
+**What You’ll Learn**:
+- Integrate APIs with `requests`.
+- Use SQLAlchemy for database operations.
+- Pass dynamic parameters via `BashOperator`.
 
 **DAG File** (`exchange_rate_dag.py`):
 ```python
@@ -171,14 +178,63 @@ value = get_dollar_rub_rate()
 new_record(value)
 ```
 
-**Key Points**:
-- Fetches USD/RUB rate from CBR API.
-- Uses SQLAlchemy to store data in `usdtorub2` table.
-- `BaseHook.get_connection` retrieves database credentials securely.
-- Command-line arguments pass connection details dynamically.
+**Alternative Script** (`task1_alternative.py`):
+```python
+import datetime
+import requests
+from sqlalchemy import create_engine, Column, Integer, Float, TIMESTAMP
+from sqlalchemy.orm import sessionmaker, declarative_base
 
-### 3. Sensor-Based DAG
-This DAG uses a custom sensor to check for data in a PostgreSQL table before executing subsequent tasks.
+Base = declarative_base()
+
+SQLALCHEMY_DATABASE_URI = ""  # Must be set manually or via environment variables
+engine = create_engine(SQLALCHEMY_DATABASE_URI)
+Base.metadata.create_all(bind=engine)
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+session_local = SessionLocal()
+
+class Record(Base):
+    __tablename__ = 'usdtorub2'
+    id = Column(Integer, nullable=False, unique=True, primary_key=True, autoincrement=True)
+    r_value = Column(Float, nullable=False)
+    r_date = Column(TIMESTAMP, nullable=False, index=True)
+
+def get_dollar_rub_rate():
+    url = "https://www.cbr-xml-daily.ru/daily_json.js"
+    response = requests.get(url)
+    if response.status_code != 200:
+        raise Exception("Request Error")
+    data = response.json()
+    return data["Valute"]["USD"]["Value"]
+
+def new_record(val):
+    record = Record(r_value=val, r_date=datetime.datetime.utcnow())
+    session_local.add(record)
+    session_local.commit()
+
+value = get_dollar_rub_rate()
+new_record(value)
+```
+
+**Explanation**:
+- **API Integration**: Fetches USD/RUB rates from CBR API.
+- **Database**: Stores rates in `usdtorub2` table using SQLAlchemy.
+- **Arguments**: `task1.py` uses command-line arguments for flexibility, while `task1_alternative.py` requires manual URI configuration.
+- **Security**: `BaseHook.get_connection` retrieves credentials securely.
+
+**Exercise**:
+1. Set up a PostgreSQL database with `usdtorub2` table.
+2. Configure `postgres_connection_main` in Airflow UI.
+3. Run the DAG and verify data in `usdtorub2` using `psql`.
+4. **Question**: How would you modify `task1.py` to fetch EUR/RUB rates?
+
+### Module 3: Sensor-Based DAG
+**Objective**: Create a DAG with a custom sensor to wait for data in a PostgreSQL table before proceeding.
+
+**What You’ll Learn**:
+- Build a custom sensor with `BaseSensorOperator`.
+- Use `psycopg2` and `pandas` for table checks.
+- Implement conditional task execution.
 
 **Sensor File** (`check_table_sensor.py`):
 ```python
@@ -249,13 +305,24 @@ for i in [1, 2, 3, 4, 5]:
 task1 >> task_check_table_sensor >> task3
 ```
 
-**Key Points**:
-- `CheckTableSensor`: Checks if `op_table` has data using `psycopg2` and `pandas`.
-- `mode='reschedule'`: Optimizes resource usage between checks.
-- Dependencies ensure tasks wait for table data.
+**Explanation**:
+- **Sensor**: `CheckTableSensor` checks if `op_table` has at least one row.
+- **Configuration**: `mode='reschedule'` optimizes resource usage; `poke_interval=10` checks every 10 seconds.
+- **Workflow**: `task1` populates data, sensor waits, then `task3` and subsequent tasks run.
 
-### 4. Data Mart DAG
-This DAG manages a product data mart by clearing tables, inserting data, and performing SQL joins.
+**Exercise**:
+1. Create `op_table` in PostgreSQL with sample data.
+2. Place `check_table_sensor.py` in `/airflow/plugins/utils/`.
+3. Run the DAG and observe the sensor’s behavior in the Airflow UI.
+4. **Question**: How would you adjust `poke_interval` for a slower database?
+
+### Module 4: Data Mart DAG
+**Objective**: Build a DAG to manage a product data mart with SQL operations.
+
+**What You’ll Learn**:
+- Use `PostgresOperator` for database tasks.
+- Perform table truncation and data insertion.
+- Execute SQL joins for data aggregation.
 
 **DAG File** (`data_mart_dag.py`):
 ```python
@@ -321,13 +388,23 @@ select_join_tables = PostgresOperator(
 clear_day1 >> clear_day2 >> clear_day3 >> insert_products >> select_join_tables
 ```
 
-**Key Points**:
-- `PostgresOperator`: Executes SQL queries for table management and joins.
-- Clears tables (`TRUNCATE`) and inserts sample product data.
-- Note: `insert_c_order2` and `insert_total_money` tasks were truncated but follow a similar SQL-based structure.
+**Explanation**:
+- **Tasks**: Clears tables (`total_money`, `products2`, `c_order2`), inserts product data, and performs a join.
+- **PostgresOperator**: Executes SQL directly, simplifying database operations.
+- **Note**: Truncated tasks (`insert_c_order2`, `insert_total_money`) follow a similar SQL structure.
 
-### 5. Variable-Driven DAG
-This DAG uses Airflow Variables to dynamically execute tasks based on stored values.
+**Exercise**:
+1. Create tables `products2`, `c_order2`, and `total_money` in PostgreSQL with appropriate schemas.
+2. Run the DAG and query the joined results using `psql`.
+3. **Question**: How would you add error handling for failed SQL queries?
+
+### Module 5: Variable-Driven DAG
+**Objective**: Create a DAG that uses Airflow Variables for dynamic task creation.
+
+**What You’ll Learn**:
+- Use `Variable.get` for dynamic configuration.
+- Generate tasks based on JSON data.
+- Process command-line arguments in scripts.
 
 **DAG File** (`variable_dag.py`):
 ```python
@@ -372,13 +449,23 @@ args = parser.parse_args()
 print('variable = ' + str(args.variable))
 ```
 
-**Key Points**:
-- Uses `Variable.get` to fetch `my_password` and `json_variable` (JSON data).
-- Dynamically creates tasks based on `d_values["text"]`.
-- `main_script.py` processes command-line arguments for flexibility.
+**Explanation**:
+- **Variables**: `my_password` (string) and `json_variable` (e.g., `{"text": ["task_a", "task_b"]}`) drive task creation.
+- **Dynamic Tasks**: Loops over `d_values["text"]` to create tasks.
+- **Script**: `main_script.py` processes the `--variable` argument.
 
-### 6. Custom Operator Example
-This example demonstrates a custom operator for inserting data into PostgreSQL.
+**Exercise**:
+1. In Airflow UI, set `my_password` (e.g., `"secret"`) and `json_variable` (e.g., `{"text": ["task_a", "task_b"]}`).
+2. Run the DAG and check logs for variable outputs.
+3. **Question**: How would you modify the DAG to handle missing variables?
+
+### Module 6: Custom Operator
+**Objective**: Develop a custom operator for inserting data into PostgreSQL.
+
+**What You’ll Learn**:
+- Extend `BaseOperator` for custom logic.
+- Use SQLAlchemy for database operations.
+- Integrate with Airflow’s connection system.
 
 **Plugin File** (`example_operator.py`):
 ```python
@@ -412,40 +499,34 @@ class ExampleOperator(BaseOperator):
         session_local.commit()
 ```
 
-**Key Points**:
-- Extends `BaseOperator` for custom database operations.
-- Uses SQLAlchemy to insert data into `op_table`.
-- Integrates with Airflow’s connection system for secure credential handling.
+**Explanation**:
+- **Custom Operator**: Inserts data into `op_table` using SQLAlchemy.
+- **Connection**: Uses `postgre_conn` for secure credential management.
+- **Usage**: Can be integrated into a DAG for custom tasks.
+
+**Exercise**:
+1. Place `example_operator.py` in `/airflow/plugins/`.
+2. Create a DAG using `ExampleOperator` to insert a sample record (e.g., `r_value=42.0`, `r_date=datetime.utcnow()`).
+3. Verify data in `op_table` using `psql`.
+4. **Question**: How would you extend `ExampleOperator` to update existing records?
 
 ## 🧪 Testing and Running
 
-1. **Place Files**:
-   - DAGs: `/airflow/dags/` (e.g., `basic_dag.py`, `exchange_rate_dag.py`).
-   - Scripts: `/airflow/scripts/` (e.g., `task1.py`, `main_script.py`).
-   - Plugins: `/airflow/plugins/` (e.g., `check_table_sensor.py`, `example_operator.py`).
+1. **Setup**:
+   - Follow [airflow_installing.markdown](https://github.com/TsMark01/DeSql/blob/main/airflow_installing.markdown).
+   - Place DAGs, scripts, and plugins in respective directories.
 
-2. **Configure Variables** (for `variable_dag`):
-   - In Airflow UI, set `my_password` (string) and `json_variable` (JSON, e.g., `{"text": ["task_a", "task_b"]}`).
-
-3. **Start Airflow**:
-   ```bash
-   airflow scheduler &
-   airflow webserver &
-   ```
-
-4. **Trigger DAGs**:
+2. **Test DAGs**:
    - Access `http://localhost:8080`.
-   - Enable and trigger DAGs via the UI.
-
-5. **Verify**:
-   - Check PostgreSQL tables (`usdtorub2`, `products2`, `op_table`) for data.
-   - Monitor logs in `/airflow/logs`.
+   - Enable and trigger DAGs.
+   - Verify data in PostgreSQL tables (`usdtorub2`, `products2`, `op_table`).
+   - Check logs in `/airflow/logs`.
 
 ## 🔮 Further Learning
 
 - Add retry logic and error handling to DAGs.
-- Explore CeleryExecutor for distributed task execution.
-- Integrate with visualization tools like Power BI. [EXAMPLE PROJECT](https://github.com/TsMark01/DE_api_airflow_project_pbi)
-- Expand sensor functionality for more complex conditions.
+- Explore CeleryExecutor for distributed tasks.
+- Integrate with visualization tools like Power BI. ([EXAMPLE PROJECT](https://github.com/TsMark01/DE_api_airflow_project_pbi))
+- Develop advanced sensors for complex conditions.
 
 **Author**: Mark Tsyrul
