@@ -8,7 +8,7 @@
 
 ## 📖 Welcome to DE Fast Course! 🎓
 
-This repository is your **one-stop guide** to **Data Engineering fundamentals**, created by **Mark Tsyrul** as a graduation project. Whether you're a beginner exploring ETL pipelines or an intermediate learner building workflows, this course covers essential tools like **PostgreSQL**, **SQLAlchemy**, **Apache Airflow**, and **Jupyter Notebook** through hands-on mini-courses and examples.
+This repository is your **one-stop guide** to **Data Engineering fundamentals**, created by **Mark Tsyrul**. Whether you're a beginner exploring ETL pipelines or an intermediate learner building workflows, this course covers essential tools like **PostgreSQL**, **SQLAlchemy**, **Apache Airflow**, and **Jupyter Notebook** through hands-on mini-courses and examples.
 
 Perfect for **CS students** looking to master data engineering skills. Dive in and start building like a pro! 💻
 
@@ -147,14 +147,6 @@ Explore my other data engineering work:
 - **[Scriptwriter Bot](https://github.com/TsMark01/Bot_Scriptwriter)**: AI-powered story generator with Yandex GPT. 🎬
 
 ---
-
-## 🤝 Contributing
-
-1. Fork the repo.
-2. Create a feature branch (`git checkout -b feature/amazing-dag`).
-3. Commit changes (`git commit -m 'Add cool DAG example'`).
-4. Push to branch (`git push origin feature/amazing-dag`).
-5. Open a Pull Request!
 
 **Issues?** Open a GitHub issue—I'm here to help! 📞
 
