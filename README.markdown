@@ -74,7 +74,7 @@ Master interactive data analysis with **Jupyter Notebook**. Prototype ETL steps,
 **[Full Course Guide](https://github.com/TsMark01/DE_FAST_COURSE/blob/main/JUPYTER_NOTEBOOK_COURSE.markdown)**
 
 ### 5. ETL Pipeline Project 🛠️
-**Level**: Intermediate | **Duration**: 4-6 hours
+**Level**: Intermediate | **Duration**: 40+ hours
 
 Build a complete **ETL pipeline** fetching from a medical API, processing with Airflow, storing in PostgreSQL, and visualizing in Power BI.
 
