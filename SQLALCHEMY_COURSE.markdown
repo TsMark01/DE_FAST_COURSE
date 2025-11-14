@@ -198,10 +198,6 @@ print("Exchange Rates:", df)
    - Execute each notebook’s cells.
    - Verify database tables and outputs with `psql`.
 
-## 📝 Portfolio Tips
-- **For UCAS**: Highlight this course: “I developed a SQLAlchemy mini course (sqlalchemy_course.markdown) for my graduation project, showcasing database management skills critical for data engineering.”
-- **For IELTS**: Use examples for Speaking Part 2 (e.g., “Describe a technical project” – discuss the joins notebook) or Writing Task 1 (e.g., describe the CRUD process). Practice terms like “ORM,” “database joins,” and “bulk inserts.”
-- **GitHub**: Add to your `DeSql` repo to complement your Airflow and Jupyter courses.
 
 ## 🔮 Further Learning
 - Integrate SQLAlchemy with Airflow for ETL pipelines.
