@@ -19,16 +19,6 @@ Perfect for **CS students** looking to master data engineering skills. Dive in a
 - **Interactive Analysis**: Explore and visualize data with Jupyter Notebook.
 - **Best Practices**: Secure setups, error handling, and automation.
 
-## 🗺️ Quick Navigation
-
-| Section | Description | Link |
-|---------|-------------|------|
-| 📚 **Mini Courses** | Structured learning paths with examples | [Jump to Courses](#mini-courses) |
-| 🛠️ **Tech Stack** | Tools and dependencies | [Tech Stack](#tech-stack) |
-| 📁 **File Structure** | What's inside the repo | [Structure](#file-structure) |
-| 💡 **Exercises** | Hands-on challenges | [Exercises](#exercises) |
-| 🔗 **Related Projects** | Connect to my other work | [Projects](#related-projects) |
-
 ---
 
 ## 📚 Mini Courses
